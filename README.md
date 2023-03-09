@@ -74,7 +74,7 @@ custom_edit_url: https://github.com/higress-group/higress-group.github.io/blob/m
 
 
 ## Note for .md file
-1. Do not use un correct html tag like `<img>、<br>`, replace with `<img /> <br />`
+1. Do not use un closed html tag like `<img>、<br>`, replace with `<img /> <br />`
 2. If you want show `<xx>`, replace with `&lt;xx&gt;`
 
 
