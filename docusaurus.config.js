@@ -1,9 +1,16 @@
+require('dotenv').config();
+
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 
 /** @type {import('@docusaurus/types').Config} */
+
+console.log('------DOCUSAURUS_CURRENT_LOCALE', process.env.DOCUSAURUS_CURRENT_LOCALE);
+
+const IS_ZH_CN = process.env.DOCUSAURUS_CURRENT_LOCALE === 'zh-cn';
+
 const config = {
   title: 'Higress',
   favicon: 'img/higress_logo_small.png',
@@ -12,7 +19,7 @@ const config = {
   url: 'https://higress.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: IS_ZH_CN ? '/zh-cn/' : '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -25,10 +32,10 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  clientModules: [require.resolve('./src/myClientModule.ts'), require.resolve('./src/custom-js.ts')],
+  clientModules: [require.resolve('./src/custom-js.ts')],
   i18n: {
-    defaultLocale: 'default',
-    locales: ['en-us', 'zh-cn', 'default'],
+    defaultLocale: 'zh-cn',
+    locales: ['en-us', 'zh-cn'],
     localeConfigs: {
       'en-us': {
         label: 'En',
